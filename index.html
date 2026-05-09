@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OG Jersey Shop — Jerseys Premium NFL, NBA, MLB & NHL</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#ff2d2d15 0%,transparent 70%);
+    top:-250px;
+    right:-150px;
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#005eff15 0%,transparent 70%);
+    bottom:-300px;
+    left:-200px;
+    z-index:-1;
+}
+
+.container{
+    width:100%;
+    max-width:1350px;
+    margin:auto;
+    padding:25px;
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    padding:18px 30px;
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:22px;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#ff2d2d;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#a1a1aa;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,#0b0b0b,#111);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:35px;
+    padding:90px 70px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#ff2d2d12;
+    border:1px solid #ff2d2d35;
+    color:#ff4d4d;
+    padding:12px 22px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:82px;
+    line-height:.95;
+    letter-spacing:-5px;
+    font-weight:900;
+    max-width:950px;
+    margin-bottom:30px;
+}
+
+.hero p{
+    color:#9ca3af;
+    font-size:21px;
+    line-height:1.8;
+    max-width:850px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:45px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:18px 30px;
+    border-radius:16px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#ff2d2d;
+    color:#fff;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 40px rgba(255,45,45,.25);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.08);
+    background:#ffffff08;
+    color:#fff;
+}
+
+.btn-secondary:hover{
+    background:#ffffff12;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+    margin-top:70px;
+}
+
+.feature{
+    background:#101010;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    padding:32px;
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+    border-color:#ff2d2d40;
+    box-shadow:0 15px 45px rgba(255,45,45,.08);
+}
+
+.feature-icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.feature h3{
+    font-size:22px;
+    margin-bottom:14px;
+}
+
+.feature p{
+    color:#9ca3af;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.section{
+    margin-top:35px;
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:30px;
+    padding:50px;
+}
+
+.section-title{
+    font-size:40px;
+    font-weight:900;
+    letter-spacing:-2px;
+    margin-bottom:35px;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+}
+
+.category{
+    position:relative;
+    overflow:hidden;
+    min-height:240px;
+    border-radius:24px;
+    padding:30px;
+    background:linear-gradient(145deg,#151515,#0d0d0d);
+    border:1px solid rgba(255,255,255,.06);
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-8px);
+    border-color:#ff2d2d40;
+}
+
+.category h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.category p{
+    color:#a1a1aa;
+    line-height:1.7;
+}
+
+.glow{
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:#ff2d2d12;
+    right:-80px;
+    bottom:-80px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;
+}
+
+.product{
+    background:#111;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+    border-color:#ff2d2d40;
+    box-shadow:0 15px 45px rgba(255,45,45,.08);
+}
+
+.product-image{
+    height:260px;
+    background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+}
+
+.product-content{
+    padding:28px;
+}
+
+.tag{
+    display:inline-block;
+    background:#ff2d2d12;
+    border:1px solid #ff2d2d30;
+    color:#ff5e5e;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:16px;
+}
+
+.product h3{
+    font-size:22px;
+    line-height:1.4;
+    margin-bottom:16px;
+}
+
+.price{
+    font-size:32px;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.old-price{
+    color:#71717a;
+    text-decoration:line-through;
+    font-size:18px;
+    margin-left:10px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+}
+
+.info{
+    background:#111;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:22px;
+    padding:28px;
+}
+
+.info span{
+    display:block;
+    color:#ff4d4d;
+    font-size:13px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.info h4{
+    line-height:1.8;
+    color:#f3f4f6;
+}
+
+.footer{
+    margin-top:35px;
+    text-align:center;
+    color:#71717a;
+    padding:50px 20px;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+@media(max-width:768px){
+
+    .nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero{
+        padding:50px 30px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        line-height:1;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .section{
+        padding:30px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav class="nav">
+
+        <div class="logo">
+            OG<span>JERSEY</span>SHOP
+        </div>
+
+        <div class="nav-links">
+            <a href="#">NFL</a>
+            <a href="#">NBA</a>
+            <a href="#">MLB</a>
+            <a href="#">NHL</a>
+            <a href="#">World Cup 2026</a>
+        </div>
+
+    </nav>
+
+    <section class="hero">
+
+        <div class="badge">
+            ● JERSEYS PREMIUM • FRETE GRÁTIS • CASHBACK
+        </div>
+
+        <h1>
+            SUA JERSEY.<br>
+            SEU TIME.<br>
+            SUA HISTÓRIA.
+        </h1>
+
+        <p>
+            Jerseys premium NFL, NBA, MLB, NHL e coleções exclusivas 2026.
+            Produtos selecionados para quem vive esporte de verdade.
+            Frete grátis, pagamento seguro e cashback em todas as compras.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="https://ogjerseyshop.com/" class="btn btn-primary" target="_blank">
+                ACESSAR LOJA
+            </a>
+
+            <a href="https://ogjerseyshop.com/pages/rastreio-de-pedido" class="btn btn-secondary" target="_blank">
+                RASTREAR PEDIDO
+            </a>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">🏈</div>
+                <h3>NFL Collection</h3>
+                <p>
+                    Jerseys Vapor F.U.S.E, Rivalries Collection, Super Bowl LX e edições limitadas.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏀</div>
+                <h3>NBA City Edition</h3>
+                <p>
+                    City Edition 25/26, Hardwood Classics e regatas lendárias Mitchell & Ness.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⚾</div>
+                <h3>MLB & World Classic</h3>
+                <p>
+                    Jerseys exclusivas inspiradas nas cidades e seleções mundiais de baseball.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">❄️</div>
+                <h3>NHL & Olimpíadas</h3>
+                <p>
+                    Jerseys NHL e coleções especiais Winter Olympics 2026 disponíveis agora.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            COMPRE POR CATEGORIA
+        </h2>
+
+        <div class="categories">
+
+            <div class="category">
+                <div class="glow"></div>
+                <h3>🏈 NFL</h3>
+                <p>
+                    Jerseys oficiais, Super Bowl LX, Salute To Service e coleções exclusivas.
+                </p>
+            </div>
+
+            <div class="category">
+                <div class="glow"></div>
+                <h3>🏀 NBA</h3>
+                <p>
+                    City Edition, Hardwood Classics e regatas icônicas da liga.
+                </p>
+            </div>
+
+            <div class="category">
+                <div class="glow"></div>
+                <h3>⚾ MLB</h3>
+                <p>
+                    MLB City Connect e jerseys clássicas das maiores franquias.
+                </p>
+            </div>
+
+            <div class="category">
+                <div class="glow"></div>
+                <h3>🏒 NHL</h3>
+                <p>
+                    Jerseys premium para quem vive a intensidade do gelo.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            MAIS POPULARES
+        </h2>
+
+        <div class="products">
+
+            <div class="product">
+
+                <div class="product-image">
+                    🏈
+                </div>
+
+                <div class="product-content">
+
+                    <div class="tag">
+                        FRETE GRÁTIS
+                    </div>
+
+                    <h3>
+                        Seattle Seahawks Vapor F.U.S.E Limited Jersey
+                    </h3>
+
+                    <div class="price">
+                        R$299,99
+                        <span class="old-price">R$399,99</span>
+                    </div>
+
+                    <a href="https://ogjerseyshop.com/" class="btn btn-primary" target="_blank">
+                        VER PRODUTO
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+                    🏀
+                </div>
+
+                <div class="product-content">
+
+                    <div class="tag">
+                        CITY EDITION 25/26
+                    </div>
+
+                    <h3>
+                        Golden State Warriors City Edition 25/26
+                    </h3>
+
+                    <div class="price">
+                        R$279,99
+                        <span class="old-price">R$349,99</span>
+                    </div>
+
+                    <a href="https://ogjerseyshop.com/" class="btn btn-primary" target="_blank">
+                        VER PRODUTO
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+                    ⚾
+                </div>
+
+                <div class="product-content">
+
+                    <div class="tag">
+                        MLB CITY CONNECT
+                    </div>
+
+                    <h3>
+                        New York Yankees Jersey Branca Torcedor
+                    </h3>
+
+                    <div class="price">
+                        R$279,99
+                        <span class="old-price">R$349,99</span>
+                    </div>
+
+                    <a href="https://ogjerseyshop.com/" class="btn btn-primary" target="_blank">
+                        VER PRODUTO
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            INFORMAÇÕES & SUPORTE
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info">
+                <span>Pagamento Seguro</span>
+                <h4>
+                    Todas as transações protegidas com criptografia e plataformas seguras.
+                </h4>
+            </div>
+
+            <div class="info">
+                <span>Frete Grátis</span>
+                <h4>
+                    Envio rápido com rastreamento disponível durante todo o processo.
+                </h4>
+            </div>
+
+            <div class="info">
+                <span>Atendimento</span>
+                <h4>
+                    Suporte via e-mail e WhatsApp disponível durante a semana inteira.
+                </h4>
+            </div>
+
+            <div class="info">
+                <span>Satisfação Garantida</span>
+                <h4>
+                    Política de suporte e reembolso para garantir segurança ao cliente.
+                </h4>
+            </div>
+
+            <div class="info">
+                <span>Contato</span>
+                <h4>
+                    contato@ogjerseyshop.com<br>
+                    +55 62 99904-6075
+                </h4>
+            </div>
+
+            <div class="info">
+                <span>CNPJ</span>
+                <h4>
+                    57.567.990/0001-61<br>
+                    Original Negocios Digitais LTDA
+                </h4>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="footer">
+
+        © 2026 OGJERSEYSHOP — Todos os direitos reservados.<br><br>
+
+        Desenvolvido para performance, conversão e escala.
+
+    </div>
+
+</div>
+
+</body>
+</html>
